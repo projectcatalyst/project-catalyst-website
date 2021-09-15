@@ -97,8 +97,8 @@ const LinkContainer = styled(Column)({
 })
 
 const IconContainer = styled(Row)({
-  width: '50px',
-  height: '50px',
+  minWidth: '50px',
+  minHeight: '50px',
   justifyContent: 'center',
   borderRadius: '8px',
   alignItems: 'center'
