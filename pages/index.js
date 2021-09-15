@@ -1,8 +1,7 @@
-import styled from 'styled-components'
-import { space, layout } from 'styled-system'
 import dynamic from 'next/dynamic'
+import Image from 'next/image'
 
-import { Column, Row } from '../src/shared/components/box'
+import Box, { Column, Row } from '../src/shared/components/box'
 import HTMLHead from '../src/shared/components/html-head'
 import PageHeader from '../src/shared/components/header'
 import Text from '../src/shared/components/text'
@@ -24,11 +23,9 @@ const Homepage = () =>
     <Column minHeight='64vh' width='100%' alignItems='center' alignSelf='center' pb='30px'>
 
       <Row mt='20px' maxWidth='1200px' px={{ _: '10px', sm: '30px' }} flexWrap='wrap'>
-        <picture>
-          <source srcset='/catalyst-cover.webp' type='image/webp' />
-          <source srcset='/catalyst-cover.png' type='image/jpeg' /> 
-          <CatalystCover src='/catalyst-cover.png' width={{ _: '260px', md: '440px' }} mx={{ _: '20px', md: '40px'}} alt='Catalyst ideas' />
-        </picture>
+        <Box mt='30px' width={{ _: '260px', md: '440px' }} display='block' mx={{ _: '20px', md: '40px'}}>
+          <Image src='/catalyst-cover.png' alt='Catalyst ideas' width='345px' height='259px' layout='responsive' />
+        </Box>
 
         <Column ml={{ _: '20px', md: '40px' }} maxWidth={{ _: '260px', sm: '300px', md: '400px', lg: '500px' }} mt='30px'>
           <Text variant='headerSmall'>
@@ -78,11 +75,9 @@ const Homepage = () =>
             </Column>
           </Column>
 
-          <picture>
-            <source srcset='/catalyst-map.webp' type='image/webp' />
-            <source srcset='/catalyst-map.png' type='image/jpeg' /> 
-            <CatalystMap src='/catalyst-map.png' mx='20px' mb='20px' mt={{ _: '30px', md: '10px' }} width={{ _: '260px', md: '440px'}} />
-          </picture>
+          <Box mb='20px' mt={{ _: '30px', md: '10px' }} width={{ _: '260px', md: '440px'}} display='block' mx='20px'>
+            <Image src='/catalyst-map.png' alt='Catalyst ideas' width='345px' height='259px' layout='responsive' />
+          </Box>
         </Row>
       </Row>
 
@@ -92,22 +87,5 @@ const Homepage = () =>
 
     <PageFooter />
   </Column>
-
-const CatalystCover = styled('img')(
-  {
-    height: 'auto',
-    marginTop: '30px'
-  },
-  layout,
-  space
-)
-
-const CatalystMap = styled('img')(
-  {
-    height: 'auto'
-  },
-  layout,
-  space
-)
 
 export default Homepage
