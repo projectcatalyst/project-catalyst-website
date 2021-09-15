@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://projectcatalyst.org
+
+# Sitemaps
+Sitemap: https://projectcatalyst.org/sitemap.xml

@@ -1,0 +1,160 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-1.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id                 Int       @id @default(autoincrement())
+  compoundId         String    @unique @map("compound_id")
+  userId             Int       @map("user_id")
+  providerType       String    @map("provider_type")
+  providerId         String    @map("provider_id")
+  providerAccountId  String    @map("provider_account_id")
+  refreshToken       String?   @map("refresh_token")
+  accessToken        String?   @map("access_token")
+  accessTokenExpires DateTime? @map("access_token_expires")
+  createdAt          DateTime  @default(now()) @map("created_at")
+  updatedAt          DateTime  @updatedAt @map("updated_at")
+  user               User      @relation("AccountOnUser", fields: [userId], references: [id])
+
+  @@index([providerAccountId], name: "providerAccountId")
+  @@index([providerId], name: "providerId")
+  @@index([userId], name: "userId")
+  @@map("accounts")
+}
+
+model Session {
+  id           Int      @id @default(autoincrement())
+  userId       Int      @map("user_id")
+  expires      DateTime
+  sessionToken String   @unique @map("session_token")
+  accessToken  String   @unique @map("access_token")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  @@map("sessions")
+}
+
+model User {
+  id                        Int           @id @default(autoincrement())
+  username                  String?       @unique
+  email                     String?       @unique
+  emailVerified             DateTime?     @map("email_verified")
+  name                      String?
+  thumbnail                 String?
+  image                     String?
+  roleStakePoolOperator     Boolean       @default(false) @map("role_stake_pool_operator")
+  roleCommunityAdvisor      Boolean       @default(false) @map("role_community_advisor")
+  availableForCollaboration Boolean       @default(false) @map("available_for_collaboration")
+  blocked                   Boolean       @default(false)
+  accountTwitter            String?
+  accountGithub             String?
+  accountLinkedIn           String?
+  accountDiscord            String?
+  accountTelegram           String?
+  createdAt                 DateTime      @default(now()) @map("created_at")
+  updatedAt                 DateTime      @updatedAt @map("updated_at")
+  accounts                  Account[]     @relation("AccountOnUser")
+  services                  UserService[] @relation("UserOnUserService")
+  skills                    UserSkill[]   @relation("UserOnUserSkill")
+
+  @@index([username], name: "username")
+  @@map("users")
+}
+
+model VerificationRequest {
+  id         Int      @id @default(autoincrement())
+  identifier String
+  token      String   @unique
+  expires    DateTime
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+
+  @@map("verification_requests")
+}
+
+model UserSkill {
+  userId    Int      @map("user_id")
+  skillId   String   @map("service_id")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  skill     Skill    @relation("SkillOnUserSkill", fields: [skillId], references: [id])
+  user      User     @relation("UserOnUserSkill", fields: [userId], references: [id])
+
+  @@id([userId, skillId])
+  @@map("users_skills")
+}
+
+model UserService {
+  userId    Int      @map("user_id")
+  serviceId String   @map("service_id")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  service   Service  @relation("ServiceOnUserService", fields: [serviceId], references: [id])
+  user      User     @relation("UserOnUserService", fields: [userId], references: [id])
+
+  @@id([userId, serviceId])
+  @@map("users_services")
+}
+
+model Service {
+  id         String            @id
+  name       String
+  createdAt  DateTime          @default(now()) @map("created_at")
+  updatedAt  DateTime          @updatedAt @map("updated_at")
+  categories ServiceCategory[] @relation("ServiceOnServiceCategory")
+  users      UserService[]     @relation("ServiceOnUserService")
+
+  @@map("services")
+}
+
+model Skill {
+  id         String          @id
+  name       String
+  createdAt  DateTime        @default(now()) @map("created_at")
+  updatedAt  DateTime        @updatedAt @map("updated_at")
+  categories SkillCategory[] @relation("SkillOnSkillCategory")
+  users      UserSkill[]     @relation("SkillOnUserSkill")
+
+  @@map("skills")
+}
+
+model Category {
+  id        String            @id
+  name      String
+  createdAt DateTime          @default(now()) @map("created_at")
+  updatedAt DateTime          @updatedAt @map("updated_at")
+  services  ServiceCategory[] @relation("CategoryOnServiceCategory")
+  skills    SkillCategory[]   @relation("CategoryOnSkillCategory")
+
+  @@map("categories")
+}
+
+model ServiceCategory {
+  serviceId  String   @map("service_id")
+  categoryId String   @map("category_id")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+  category   Category @relation("CategoryOnServiceCategory", fields: [categoryId], references: [id])
+  service    Service  @relation("ServiceOnServiceCategory", fields: [serviceId], references: [id])
+
+  @@id([serviceId, categoryId])
+  @@map("services_categories")
+}
+
+model SkillCategory {
+  skillId    String   @map("skill_id")
+  categoryId String   @map("category_id")
+  createdAt  DateTime @default(now()) @map("created_at")
+  updatedAt  DateTime @updatedAt @map("updated_at")
+  category   Category @relation("CategoryOnSkillCategory", fields: [categoryId], references: [id])
+  skill      Skill    @relation("SkillOnSkillCategory", fields: [skillId], references: [id])
+
+  @@id([skillId, categoryId])
+  @@map("skills_categories")
+}

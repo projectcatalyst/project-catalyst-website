@@ -1,0 +1,11 @@
+<svg id="Arrow" data-name="Arrow icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 200">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #EFEFEF;
+      }
+    </style>
+  </defs>
+  <title>arrow</title>
+  <path class="cls-1" d="M243.52,3.44H12.41a8.4,8.4,0,0,0-7,13L120.7,192.77a8.37,8.37,0,0,0,14,0L250.59,16.56A8.47,8.47,0,0,0,243.52,3.44Z"/>
+</svg>
