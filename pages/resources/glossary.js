@@ -48,7 +48,7 @@ const Glossary = () => {
             If you're new to the cryptocurrency market it is worth looking at some general crypto glossaries such as from <LinkText href='https://coinmarketcap.com/alexandria/glossary'>CoinMarketcap</LinkText> or <LinkText href='https://academy.binance.com/en/glossary'>Binance</LinkText>.
           </Text>
           <Text mt='15px' mb='10px'>
-            There is also a <LinkText href='https://docs.cardano.org/en/latest/explore-cardano/glossary.html'>Cardano glossary</LinkText> to find out more about terms used in the Cardano ecosystem that is worth checking out!
+            There is also a <LinkText href='https://docs.cardano.org/glossary'>Cardano glossary</LinkText> to find out more about terms used in the Cardano ecosystem that is worth checking out!
           </Text>
 
           <Text mt='35px' variant='titleSmall' bold>
