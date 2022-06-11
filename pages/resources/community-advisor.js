@@ -104,7 +104,7 @@ const CommunityAdvisor = () => {
             How do I connect with other CAs?
           </Text>
           <Text mt='15px' mb='10px'>
-            You can join the <LinkText href='https://t.me/CatalystCommunityAdvisors'>CA Telegram</LinkText>channel to get to know other CAs and engage in the most recent discussions. You can also find other active CAs in the community <LinkText href='https://discord.com/invite/8HeBaUdm'>Cardano Project Catalyst Discord</LinkText>.
+            You can join the <LinkText href='https://t.me/CatalystCommunityAdvisors'>CA Telegram</LinkText> channel to get to know other CAs and engage in the most recent discussions. You can also find other active CAs in the community <LinkText href='https://discord.com/invite/8HeBaUdm'>Cardano Project Catalyst Discord</LinkText>.
           </Text>
 
           <Text mt='35px' variant='subHeading' bold>
