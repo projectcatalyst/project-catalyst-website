@@ -52,7 +52,7 @@ const ProjectCatalyst = () => {
           </Text>
 
           <Text mt='15px' mb='10px'>
-            To do this, Project Catalyst is divided into a series of funds which are deployed every six weeks. These funds will illicit ideas in the form of proposals from participants. Each proposal will focus around a challenge issued by the Project Catalyst team or the Project Catalyst community. The proposals will then go through a community refinement process where they are vetted for feasibility, auditability, and impact by a group of incentivized community advisors. Once the proposals have been finalized they will be voted on by the community and funds will be distributed in the form of ada to winning projects. Each stage of this process is described in greater detail throughout this document.
+            To do this, Project Catalyst is divided into a series of funds which are deployed every six weeks. These funds will elicit ideas in the form of proposals from participants. Each proposal will focus around a challenge issued by the Project Catalyst team or the Project Catalyst community. The proposals will then go through a community refinement process where they are vetted for feasibility, auditability, and impact by a group of incentivized community advisors. Once the proposals have been finalized they will be voted on by the community and funds will be distributed in the form of ada to winning projects. Each stage of this process is described in greater detail throughout this document.
           </Text>
 
           <Text mt='35px' variant='subHeading' bold>
