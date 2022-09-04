@@ -79,7 +79,7 @@ const CatalystEcosystem = () => {
                   imageSrc='/catalyst-swarm.png'
                   title='Swarm sessions'
                   text='Collaborate on ideas in a swarm session'
-                  url='https://www.catalystswarm.com/'
+                  url='https://catalystswarm.com/building-communities'
                   source='community'
                 />
               </Row>
@@ -199,7 +199,7 @@ const CatalystEcosystem = () => {
                   imageSrc='/catalyst-swarm.png'
                   title='Swarm sessions'
                   text='Collaborate on ideas in a swarm session'
-                  url='https://www.catalystswarm.com/'
+                  url='https://catalystswarm.com/building-communities'
                   source='community'
                 />
                 <ResourceItem
@@ -296,7 +296,7 @@ const CatalystEcosystem = () => {
               </Row>
               <Row my='20px'>
                 <Text ml='15px' mt='10px' variant='textSmall' maxWidth='330px'>
-                  Funded proposals report every two weeks on the progress of execution of their proposal.
+                  Funded proposals report every month on the progress of execution of their proposal.
                 </Text>
               </Row>
             </Column>
@@ -337,7 +337,7 @@ const CatalystEcosystem = () => {
                   imageSrc='/catalyst-swarm.png'
                   title='Swarm sessions'
                   text='Collaborate on ideas in a swarm session'
-                  url='https://www.catalystswarm.com/'
+                  url='https://catalystswarm.com/building-communities'
                   source='community'
                 />
               </Row>
