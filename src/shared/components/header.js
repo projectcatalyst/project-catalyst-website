@@ -15,21 +15,20 @@ import useUser from '../hooks/use-user'
 import FundPromotionHeader from './fund-promotion-header'
 
 const links = [
-  { href: '/calendar', label: 'Calendar', key: 'calendar' },
   { href: '/community', label: 'Community', key: 'community' },
-  { href: '/proposals', label: 'Proposals', key: 'proposals' },
-  { href: '/resources', label: 'Resources', key: 'resources' }
+  { href: 'https://docs.catalystcontributors.org/project-catalyst/', label: 'Documentation', key: 'documentation', target: '_blank' }
 ]
 
 const CatalystTitleIcon = touchableIcon(CatalystTitle)
 
 const WebsiteLinks = props => 
   <Box alignItems='center' flexWrap='wrap' {...props}>
-    { links.map(({ href, label, key }) =>
+    { links.map(({ href, label, key, target }) =>
       <NavigationLink
         key={key}
         href={href}
         fontSize={{ _: '16px', sm: '16px', md: '16px', lg: '18px' }}
+        { ... !!target && {target}}
         ml={{ _: '0px', sm: '0px', md: '8px', lg: '14px' }}
         mr={{ _: '0px', sm: '0px', md: '8px', lg: '14px' }}
         mt={{ _: '10px', sm: '10px', md: '0px' }}

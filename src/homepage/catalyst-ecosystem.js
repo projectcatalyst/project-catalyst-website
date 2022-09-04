@@ -11,7 +11,7 @@ const Icon = dynamic(() => import('../shared/components/font-icon'))
 const LinkText = dynamic(() => import('../shared/components/link-text'))
 
 const CatalystEcosystem = () => {
-  const [tab, setTab] = useState('community-advisor')
+  const [tab, setTab] = useState('proposal-assessor')
 
   return (
     <Row mt='120px' mb='100px' maxWidth='1200px' px={{ _: '10px', sm: '30px' }} flexWrap='wrap'>
@@ -20,14 +20,14 @@ const CatalystEcosystem = () => {
       </Text>
 
       <Text mt={{ _: '15px', md: '30px' }}>
-        The stages for relevant to each role in Project Catalyst are shown below. For each stage the most relevant services and resources are listed. Check out the <LinkText href='/resources/funding-process'>Funding Process</LinkText> resource to find out more about all of the stages in Project Catalyst.
+        The stages for relevant to each role in Project Catalyst are shown below. For each stage the most relevant services and resources are listed. Check out the <LinkText href='https://docs.catalystcontributors.org/project-catalyst/funding-process/funding-process' target='_blank'>Funding Process</LinkText> resource to find out more about all of the stages in Project Catalyst.
       </Text>
 
       <GetInvolvedContainer>
         <Row>
-          <GetInvolvedNavItem onClick={() => setTab('community-advisor')} active={tab === 'community-advisor'} px={{ _: '7px', sm: '15px' }} py='8px'>
+          <GetInvolvedNavItem onClick={() => setTab('proposal-assessor')} active={tab === 'proposal-assessor'} px={{ _: '7px', sm: '15px' }} py='8px'>
             <Text variant='text'>
-              Community Advisor
+              Proposal Assessor
             </Text>
           </GetInvolvedNavItem>
           <GetInvolvedNavItem onClick={() => setTab('proposer')} active={tab === 'proposer'} px={{ _: '7px', sm: '15px' }} py='8px'>
@@ -41,9 +41,9 @@ const CatalystEcosystem = () => {
             </Text>
           </GetInvolvedNavItem>
         </Row>
-        <GetInvolvedContent p={{ _: '10px', sm: '20px' }} topLeftRadius={tab === 'community-advisor' ? '0px' : '10px'}>
+        <GetInvolvedContent p={{ _: '10px', sm: '20px' }} topLeftRadius={tab === 'proposal-assessor' ? '0px' : '10px'}>
           <ResourceSourceExplainer />
-          { tab === 'community-advisor' && 
+          { tab === 'proposal-assessor' && 
             <Column>
               <Row mt='10px' alignItems='center'>
                 <GetInvolvedItemHeader title='Learn' />
@@ -51,23 +51,16 @@ const CatalystEcosystem = () => {
               <Row my='20px' flexWrap='wrap'>
                 <ResourceItem
                   imageSrc='/catalyst-logo.svg'
-                  title='Community Advisor Onboarding'
-                  text='Official onboarding guide for community advisors'
-                  url='https://docs.google.com/document/d/16aq9dNudJ5S3TEVQhBgRznTCoaF8SQezyActtVhec8E'
+                  title='Proposal Assessor Guide'
+                  text='Learn about the role of a proposal assessor'
+                  url='https://docs.google.com/document/d/1g-iZhDlKhUBZkui1uv8NVNfJC4oVD3JtR-P6Fue7XPU/edit'
                   source='official'
-                />
-                <ResourceItem
-                  imageSrc='/catalyst-logo.svg'
-                  title='Community Advisor Guide'
-                  text='Learn about the role of a community advisor'
-                  url='/resources/community-advisor'
-                  source='community'
                 />
                 <ResourceItem
                   imageSrc='/catalyst-logo.svg'
                   title='Funding Process'
                   text='Learn about the funding process for Project Catalyst'
-                  url='/resources/funding-process'
+                  url='https://docs.catalystcontributors.org/project-catalyst/funding-process/funding-process'
                   source='community'
                 />
               </Row>
@@ -83,10 +76,10 @@ const CatalystEcosystem = () => {
                   source='official'
                 />
                 <ResourceItem
-                  imageSrc='/catalyst-swarm.jpeg'
+                  imageSrc='/catalyst-swarm.png'
                   title='Swarm sessions'
                   text='Collaborate on ideas in a swarm session'
-                  url='https://www.swarm4catalyst.com/'
+                  url='https://www.catalystswarm.com/'
                   source='community'
                 />
               </Row>
@@ -102,10 +95,10 @@ const CatalystEcosystem = () => {
                   source='official'
                 />
                 <ResourceItem
-                  imageSrc='/catalyst-swarm.jpeg'
+                  imageSrc='/catalyst-swarm.png'
                   title='Swarm sessions'
                   text='Offer advice and feedback to proposers in swarm sessions'
-                  url='https://www.swarm4catalyst.com/'
+                  url='https://www.catalystswarm.com/'
                   source='community'
                 />
               </Row>
@@ -122,8 +115,8 @@ const CatalystEcosystem = () => {
                 />
                 <ResourceItem
                   imageSrc='/catalyst-logo.svg'
-                  title='Community Advisor Tutorial'
-                  text='Learn how to be a community advisor'
+                  title='Proposal Assessor Tutorial'
+                  text='Learn how to be a proposal assessor'
                   url='https://vimeo.com/600295406'
                   source='community'
                 />
@@ -131,28 +124,28 @@ const CatalystEcosystem = () => {
                   imageSrc='/catalyst-logo.svg'
                   title='Assessment Guide'
                   text='Learn about proposal assessments from the official assessment resource'
-                  url='https://docs.google.com/document/d/1Fn1CQHK_TNSaybQtnxvI9DZJ9PAufZelBEfOLWbp-gw'
+                  url='https://docs.google.com/document/d/1g-iZhDlKhUBZkui1uv8NVNfJC4oVD3JtR-P6Fue7XPU/edit'
                   source='official'
                 />
                 <ResourceItem
                   imageSrc='/catalyst-logo.svg'
-                  title='Community Advisor Tool'
-                  text='Review proposals with help using the community advisor tool'
-                  url='https://cardanocataly.st/ca-tool/#/'
+                  title='Proposal Assessor Tool'
+                  text='Review proposals with help using the proposal assessor tool'
+                  url='https://cardanocataly.st/pa-tool/#/'
                   source='community'
                 />
                 <ResourceItem
                   image={<Icon icon='telegram' iconSize='50px' color='#0088cc' />}
-                  title='Community Advisor Chat'
-                  text='Ask questions and collaborate in the official advisors chat'
+                  title='Proposal Assessor Chat'
+                  text='Ask questions and collaborate in the official assessors chat'
                   url='https://t.me/CatalystCommunityAdvisors'
                   source='official'
                 />
                 <ResourceItem
                   image={<Icon icon='discord' iconSize='46px' mt='8px' color='#7289da' />}
                   title='Community Chat'
-                  text='Meet advisors and support proposals in the community'
-                  url='https://discord.com/invite/TTZKB9M'
+                  text='Meet assessors and support proposals in the community'
+                  url='https://discord.gg/yfyfsvdrbj'
                   source='community'
                 />
               </Row>
@@ -162,9 +155,9 @@ const CatalystEcosystem = () => {
               <Row my='20px' flexWrap='wrap'>
                 <ResourceItem
                   imageSrc='/catalyst-logo.svg'
-                  title='Veteran Community Advisor Tool'
-                  text='Review advisor reviews with the veteran community advisor tool'
-                  url='https://cardanocataly.st/vca-tool/#/'
+                  title='Veteran Proposal Assessor Tool'
+                  text='Review assessor reviews with the veteran proposal assessor tool'
+                  url='https://cardanocataly.st/vpa-tool/#/'
                   source='community'
                 />
               </Row>
@@ -180,14 +173,14 @@ const CatalystEcosystem = () => {
                   imageSrc='/catalyst-logo.svg'
                   title='Campaign and Proposal Guide'
                   text='Learn about the role of a proposer'
-                  url='/resources/proposer'
+                  url='https://docs.catalystcontributors.org/project-catalyst/proposer/proposer-overview'
                   source='community'
                 />
                 <ResourceItem
                   imageSrc='/catalyst-logo.svg'
                   title='Funding Process'
                   text='Learn about the funding process for Project Catalyst'
-                  url='/resources/funding-process'
+                  url='https://docs.catalystcontributors.org/project-catalyst/funding-process/funding-process'
                   source='community'
                 />
               </Row>
@@ -203,10 +196,10 @@ const CatalystEcosystem = () => {
                   source='official'
                 />
                 <ResourceItem
-                  imageSrc='/catalyst-swarm.jpeg'
+                  imageSrc='/catalyst-swarm.png'
                   title='Swarm sessions'
                   text='Collaborate on ideas in a swarm session'
-                  url='https://www.swarm4catalyst.com/'
+                  url='https://www.catalystswarm.com/'
                   source='community'
                 />
                 <ResourceItem
@@ -246,7 +239,7 @@ const CatalystEcosystem = () => {
                   image={<Icon icon='discord' iconSize='46px' mt='8px' color='#7289da' />}
                   title='Community Chat'
                   text='Get a channel made for a proposal on the community chat'
-                  url='https://discord.com/invite/TTZKB9M'
+                  url='https://discord.gg/yfyfsvdrbj'
                   source='community'
                 />
               </Row>
@@ -263,10 +256,10 @@ const CatalystEcosystem = () => {
                   source='official'
                 />
                 <ResourceItem
-                  imageSrc='/catalyst-swarm.jpeg'
+                  imageSrc='/catalyst-swarm.png'
                   title='Swarm sessions'
                   text='Host a swarm session to get feedback on a proposal'
-                  url='https://www.swarm4catalyst.com/'
+                  url='https://www.catalystswarm.com/'
                   source='community'
                 />
               </Row>
@@ -293,7 +286,7 @@ const CatalystEcosystem = () => {
                   image={<Icon icon='discord' iconSize='46px' mt='8px' color='#7289da' />}
                   title='Community Chat'
                   text='Share the finished proposal with the community'
-                  url='https://discord.com/invite/TTZKB9M'
+                  url='https://discord.gg/yfyfsvdrbj'
                   source='community'
                 />
               </Row>
@@ -318,14 +311,14 @@ const CatalystEcosystem = () => {
                   imageSrc='/catalyst-logo.svg'
                   title='Voter Guide'
                   text='Learn about the role of a voter'
-                  url='/resources/voter'
+                  url='https://docs.catalystcontributors.org/project-catalyst/voter'
                   source='community'
                 />
                 <ResourceItem
                   imageSrc='/catalyst-logo.svg'
                   title='Funding Process'
                   text='Learn about the funding process for Project Catalyst'
-                  url='/resources/funding-process'
+                  url='https://docs.catalystcontributors.org/project-catalyst/funding-process/funding-process'
                   source='community'
                 />
               </Row>
@@ -341,10 +334,10 @@ const CatalystEcosystem = () => {
                   source='official'
                 />
                 <ResourceItem
-                  imageSrc='/catalyst-swarm.jpeg'
+                  imageSrc='/catalyst-swarm.png'
                   title='Swarm sessions'
                   text='Collaborate on ideas in a swarm session'
-                  url='https://www.swarm4catalyst.com/'
+                  url='https://www.catalystswarm.com/'
                   source='community'
                 />
               </Row>
@@ -360,10 +353,10 @@ const CatalystEcosystem = () => {
                   source='official'
                 />
                 <ResourceItem
-                  imageSrc='/catalyst-swarm.jpeg'
+                  imageSrc='/catalyst-swarm.png'
                   title='Swarm sessions'
                   text='Offer advice and feedback to proposers in swarm sessions'
-                  url='https://www.swarm4catalyst.com/'
+                  url='https://www.catalystswarm.com/'
                   source='community'
                 />
                 <ResourceItem
@@ -377,7 +370,7 @@ const CatalystEcosystem = () => {
                   image={<Icon icon='discord' iconSize='46px' mt='8px' color='#7289da' />}
                   title='Community Chat'
                   text='Support proposals and meet the community'
-                  url='https://discord.com/invite/TTZKB9M'
+                  url='https://discord.gg/yfyfsvdrbj'
                   source='community'
                 />
               </Row>
@@ -390,13 +383,6 @@ const CatalystEcosystem = () => {
                   title='Registration & Voting Guide'
                   text='Learn about registration with the official resource'
                   url='https://iohk.zendesk.com/hc/en-us/articles/900005679386'
-                  source='official'
-                />
-                <ResourceItem
-                  imageSrc='/catalyst-logo.svg'
-                  title='Fund 6 Voting Guide'
-                  text='All you need to know - Fund 6 voting'
-                  url='https://www.reddit.com/r/cardano/comments/p2xpi8/project_catalyst_all_you_need_to_know_fund6_voter/'
                   source='official'
                 />
               </Row>

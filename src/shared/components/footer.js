@@ -25,21 +25,12 @@ const PageFooter = () => {
       <Content>
         <Row flexDirection={{ _: 'column-reverse', lg: 'row' }} justifyContent='space-between' alignItems='center' minHeight={60}>
           <Row flexWrap='wrap' justifyContent='center' width='100%'>
-            <Row flexWrap='wrap' justifyContent='center'>
-              <IconLink
-                onClick={handleSocialLink('pace')}
-                IconImage={<img src='/pace-logo.svg' width='36px' height='40px' />}
-                backgroundColor='white'
-                text='PACE team and Project Catalyst proposals'
-              />
+            <Row>
               <IconLink
                 onClick={handleSocialLink('discord')}
                 IconImage={<Icon icon='discord' color='white' iconSize='26px'/>}
                 backgroundColor='#5865F2'
-                text="'projectcatalyst-org' chat under 'Ecosystem Tools'"
               />
-            </Row>
-            <Row>
               <IconLink
                 onClick={handleSocialLink('twitter')}
                 IconImage={<Icon icon='twitter' color='white' iconSize='26px'/>}
