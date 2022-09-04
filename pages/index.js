@@ -55,20 +55,20 @@ const Homepage = () =>
             </Text>
 
             <Column mt='20px' width='100%' maxWidth={{ _: '280px', md: '420px' }}>
-              <Link href='/resources/what-is-project-catalyst' maxWidth={{ _: '280px', md: '420px' }}>
+              <Link href='https://docs.catalystcontributors.org/project-catalyst/project-catalyst/what-is-project-catalyst' target='_blank' maxWidth={{ _: '280px', md: '420px' }}>
                 <Button variant='outlined' my='10px' width={{ _: '280px', md: '420px' }}>
                   What is Project Catalyst?
                 </Button>
               </Link>
               <Row width='100%' justifyContent='space-between'>
-                <Link href='/resources/glossary'>               
+                <Link href='https://docs.catalystcontributors.org/project-catalyst/project-catalyst/glossary' target='_blank'>               
                   <Button variant='outlined' minWidth={{ _: '130px', md: '200px' }} my='10px'>
                     Glossary
                   </Button>
                 </Link>
-                <Link href='/resources'>
+                <Link href='https://docs.catalystcontributors.org/project-catalyst/project-catalyst/useful-links' target='_blank'>
                   <Button variant='outlined' minWidth={{ _: '130px', md: '200px' }} my='10px'>
-                    Resources
+                    Useful Links
                   </Button>
                 </Link>
               </Row>

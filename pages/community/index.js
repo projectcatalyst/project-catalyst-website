@@ -16,6 +16,7 @@ import ProfileImage from '../../src/shared/components/profile-image'
 import { initializeApollo, addApolloState } from '../../src/graphql/apollo-client'
 import Line from '../../src/shared/components/line'
 import ProfileAccounts from '../../src/shared/components/profile-accounts'
+import WarningMessage from '../../src/shared/components/warning-message'
 
 import COMMUNITY_QUERY from '../../src/shared/gql/community'
 import PROFESSIONAL_DATA_QUERY from '../../src/shared/gql/professional-data'
@@ -140,6 +141,10 @@ const Community = ({ services, skills }) => {
       <PageHeader />
 
       <Column maxWidth='1200px' minHeight='64vh' width='100%' alignSelf='center' pb='30px' px='20px'>
+        <WarningMessage>
+          This is a community maintained website and is not official. Beware of scammers!
+        </WarningMessage>
+
         <Row mt='10px' flexWrap='wrap'>
           <Row flexWrap='wrap'>
             <Column mt={{ _: '5px', md: '10px' }} mr={{ _: '10px', sm: '40px' }}>
