@@ -296,7 +296,7 @@ const CatalystEcosystem = () => {
               </Row>
               <Row my='20px'>
                 <Text ml='15px' mt='10px' variant='textSmall' maxWidth='330px'>
-                  Funded proposals report every two weeks on the progress of execution of their proposal.
+                  Funded proposals report every month on the progress of execution of their proposal.
                 </Text>
               </Row>
             </Column>
