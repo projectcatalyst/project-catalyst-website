@@ -63,6 +63,13 @@ const CatalystEcosystem = () => {
                   url='https://docs.catalystcontributors.org/project-catalyst/funding-process/funding-process'
                   source='community'
                 />
+                <ResourceItem
+                  imageSrc='/catalyst-school.png'
+                  title='Catalyst School'
+                  text='Learn about becoming a proposal assessor from community members'
+                  url='https://linktr.ee/CatalystSchool'
+                  source='community'
+                />
               </Row>
               <Row mt='10px' alignItems='center'>
                 <GetInvolvedItemHeader title='Ideation' number='1' />
@@ -181,6 +188,13 @@ const CatalystEcosystem = () => {
                   title='Funding Process'
                   text='Learn about the funding process for Project Catalyst'
                   url='https://docs.catalystcontributors.org/project-catalyst/funding-process/funding-process'
+                  source='community'
+                />
+                <ResourceItem
+                  imageSrc='/catalyst-school.png'
+                  title='Catalyst School'
+                  text='Get help with proposing from community members'
+                  url='https://linktr.ee/CatalystSchool'
                   source='community'
                 />
               </Row>
