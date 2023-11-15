@@ -1,16 +1,12 @@
 import { useEffect } from 'react'
-import { ApolloProvider } from '@apollo/client'
-import { Provider } from 'next-auth/client'
 import { useRouter } from 'next/router'
 
 import ThemeManager from '../src/shared/styles/themes'
 import HTMLHeadDefault from '../src/shared/components/html-head-default'
-import { useApollo } from '../src/graphql/apollo-client'
 
 import { GA_TRACKING_ID } from '../src/lib/gtag'
 
 const App = ({ Component, pageProps }) => {
-  const apolloClient = useApollo(pageProps?.__APOLLO_STATE__)
   const router = useRouter()
 
   const handleRouteChange = (url) => {
@@ -27,14 +23,10 @@ const App = ({ Component, pageProps }) => {
   }, [router.events])
 
   return (
-    <Provider session={pageProps.session}>
-      <ApolloProvider client={apolloClient}>
-        <ThemeManager>
-          <HTMLHeadDefault />
-          <Component {...pageProps} />
-        </ThemeManager>
-      </ApolloProvider>
-    </Provider>
+    <ThemeManager>
+      <HTMLHeadDefault />
+      <Component {...pageProps} />
+    </ThemeManager>
   )
 }
 
