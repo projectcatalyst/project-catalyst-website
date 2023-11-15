@@ -1,21 +1,15 @@
 import { memo, Fragment, useState } from 'react'
 import styled from 'styled-components'
-import { signIn } from 'next-auth/client'
-import { useRouter } from 'next/router'
 import { RemoveScrollBar } from 'react-remove-scroll-bar'
 
 import CatalystTitle from '../svg/catalyst-title.svg'
 import Box, { Column, Row } from './box'
-import Button from './button'
 import touchableIcon from '../functions/touchable-icon'
 import NavigationLink from './navigation-link'
 import Icon from './font-icon'
-import ProfileImage from './profile-image'
-import useUser from '../hooks/use-user'
 import FundPromotionHeader from './fund-promotion-header'
 
 const links = [
-  { href: '/community', label: 'Community', key: 'community' },
   { href: 'https://docs.catalystcontributors.org/project-catalyst/', label: 'Documentation', key: 'documentation', target: '_blank' }
 ]
 
@@ -40,18 +34,10 @@ const WebsiteLinks = props =>
   </Box>
 
 const PageHeader = ({ hidePromotion }) => {
-  const router = useRouter()
   const [menuVisible, setMenuVisible] = useState(false)
-  const [user, loading] = useUser()
-
-  const imageSource = user ? user.thumbnail || user.image : null
-
-  const handleProfileImage = () => router.push('/profile')
 
   const handleMenuShow = () => setMenuVisible(true)
   const handleMenuHide = () => setMenuVisible(false)
-
-  const handleLogin = () => signIn()
 
   return (
     <Fragment>
@@ -72,9 +58,8 @@ const PageHeader = ({ hidePromotion }) => {
                 <CatalystLogo src='/catalyst-logo.svg' />
               </NavigationLink>
             </Box>
-            <Box display={{ _: 'none', md: 'flex'}}> 
-              <WebsiteLinks flexDirection='row' />
-            </Box>
+
+            <Box display={{ _: 'none', md: 'flex'}} /> 
 
             <Row display={{ _: 'flex', md: 'none' }} justifyContent='flex-end' width='100px'>
               <Box onClick={handleMenuShow}>
@@ -83,16 +68,7 @@ const PageHeader = ({ hidePromotion }) => {
             </Row>
 
             <Row display={{ _: 'none', md: 'flex' }} width='150px' justifyContent='flex-end'>
-              { !!user &&
-                <Box onClick={handleProfileImage} width='50px' height='50px' borderRadius='25px' alignItems='center' justifyContent='center'>
-                  <ProfileImage src={imageSource} size='small' />
-                </Box>
-              }
-              { !loading && !user && 
-                <Button onClick={handleLogin}>
-                  Login
-                </Button>
-              }
+              <WebsiteLinks flexDirection='row' />
             </Row>
           </Row>
         </Content>
@@ -106,16 +82,6 @@ const PageHeader = ({ hidePromotion }) => {
               </Row>
               <Column px='20px' alignItems='center'>
                 <WebsiteLinks flexDirection='column' />
-                { !!user &&
-                  <Box mt='40px' onClick={handleProfileImage} width='70px' height='70px' borderRadius='25px'  alignItems='center' justifyContent='center'>
-                    <ProfileImage src={imageSource} size='medium' />
-                  </Box>
-                }
-                { !loading && !user && 
-                  <Button mt='40px' onClick={handleLogin}>
-                    Login
-                  </Button>
-                }
               </Column>
             </Column>
             <RemoveScrollBar />
